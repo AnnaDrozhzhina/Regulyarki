@@ -30,7 +30,7 @@ with open("phonebook_raw.csv", encoding="utf-8") as f:
 
 def good_number(phone_number):
 
-    pattern = r'(\+7|8)?(\s*|-)\(?(\d{3})\)?[\s*|-]?(\d{3})[\s*|-]?(\d{2})[\s*|-]?(\d{2})[\s*|-]?\(?(доб.)?[\s*]?(\d+)?'
+    pattern = r'(\+7|8)?(\s*|-)\(?(\d{3})\)?[\s*|-]?(\d{3})[\s*|-]?(\d{2})[\s*|-]?(\d{2})[\s*|-]?\(?(доб.)?[\s*]?(\d{4})?'
     pattern_repl = r" +7(\3)\4-\5-\6 \7\8 "
     result = re.sub(pattern, pattern_repl, phone_number)
     return result
